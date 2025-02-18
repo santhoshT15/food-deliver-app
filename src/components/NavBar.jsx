@@ -116,7 +116,7 @@ const NavBar = ({ setShowLogin }) => {
                     User-Login
                   </li>
                   <a
-                    href="http://localhost:5174/"
+                    href="https://food-deliver-admin.netlify.app"
                     className="cursor-pointer py-2 mx-2 hover:bg-[#ff9b60] hover:text-white"
                   >
                     Admin-Login

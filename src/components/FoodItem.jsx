@@ -4,6 +4,8 @@ import { storeContext } from "../context/storeContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, url, addToCart, removeCart } = useContext(storeContext);
+  const isItemInCart = cartItems?.[id];
+
   return (
     <div className="w-[100%] m-auto rounded-2xl shadow-[0px_0px_10px_#00000015] transition duration-300 animate-fadeIn">
       <div className=" relative p-3">
@@ -12,7 +14,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           alt=""
           className="w-full rounded-t-[15px] rounded-b-none "
         />
-        {!cartItems[id] ? (
+        {!isItemInCart ? (
           <button
             onClick={() => addToCart(id)}
             className=" absolute bottom-4 right-4 flex cursor-pointer m-2 text-base border-none rounded-md w-12 bg-orange-600 text-slate-200 hover:bg-orange-300 hover:text-slate-700 px-2 py-1"
